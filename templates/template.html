@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--     DataTables js module for the result table -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="js/dataTable.js"></script>
+    <title>RNAi Base</title>
+</head>
+<body>
+    <h1>Search RNAi Database</h1>
+    <table id="table_id" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Stable ID</th>
+                <th>Screen Title</th>
+                <th>Authors</th>
+                <th>Pubmed ID</th>
+                <th>Organism</th>
+                <th>Gene ID</th>
+                <th>Entrez ID</th>
+                <th>Gene Symbol</th>
+                <th>Reagent Type</th>
+                <th>Phenotype</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sid in stid %}
+        <tr>
+            <td>{{ sid }}</td>
+            <td>{{ screent[loop.index0] }}</td>
+            <td>{{ author[loop.index0] }}</td>
+            <td>{{ pubmed[loop.index0] }}</td>
+            <td>{{ orga[loop.index0] }}</td>
+            <td>{{ geid[loop.index0] }}</td>
+            <td>{{ ent_id[loop.index0] }}</td>
+            <td>{{ gene_sym[loop.index0] }}</td>
+            <td>{{ retype[loop.index0] }}</td>
+            <td>{{ pheno[loop.index0] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+</body>
+</html>
